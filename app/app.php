@@ -4,9 +4,22 @@
     require_once __DIR__."/../src/Pingpong.php";
 
     $app = new Silex\Application();
-    $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../views'
-));
+    $app['debug'] = true;
+    $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
+
+
+    $app->get('/', function() use ($app) {
+        return $app['twig']->render('homepage.html.twig');
+    });
+
+    $app->post('/process', function() use ($app) {
+        $input = $_POST['process'];
+        $processor = new Pingpong();
+        $output = $processor->pingponggenerator($input);
+        return $app['twig']->render('results.html.twig', array('results'=>$output));
+
+    });
+
 
     return $app;
 ?>

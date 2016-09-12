@@ -20,7 +20,7 @@
             for ($i = 1; $i < $targetnumber + 1; $i++) {
                 array_push($return_array, $this->pingpongcheck($i));
             }
-            return implode(" ", $return_array);
+            return $return_array;
         }
     }
 ?>

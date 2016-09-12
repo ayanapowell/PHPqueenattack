@@ -20,18 +20,18 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 ## Specifications
 
-* Returns "ping-pong" for numbers divisible by 15
-    * Input: 45
-    * Output: ping-pong
-* Returns "pong" for numbers divislbe by 5
-    * Input: 50
-    * Output: pong
-* Returns "ping" for numbers divisible by 3
-    * Input: 12
-    * Output: ping
-* Returns original number if not divisible by 3 or 5 or 15
-    * Input: 8
-    * Output: 8
+* Queen can attack if target is "above" or "below"
+    * Input: Queen (3,3), Target (3,1)
+    * Output: Can attack
+* Queen can attack if target is "right" or "left"
+    * Input: Queen (3,3), Target (2,3)
+    * Output: Can attack
+* Queen can attack if target is diagonal
+    * Input: Queen (3,3), Target (2,2)
+    * Output: Can attack
+* Queen cannot attack targets that do not meet these criteria
+    * Input: Queen (3,3), Target (4,1)
+    * Output: Cannot attack
 
 ## Known Bugs
 
